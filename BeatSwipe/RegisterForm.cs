@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace BeatSwipe
 {
@@ -11,6 +13,66 @@ namespace BeatSwipe
             InitializeComponent();
         }
 
+        // USERNAME
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "Username")
+            {
+                txtUsername.Text = "";
+                txtUsername.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtUsername.Text))
+            {
+                txtUsername.Text = "Username";
+                txtUsername.ForeColor = Color.Gray;
+            }
+        }
+
+        // PASSWORD
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Password")
+            {
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.Black;
+                txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                txtPassword.Text = "Password";
+                txtPassword.ForeColor = Color.Gray;
+                txtPassword.PasswordChar = '\0';
+            }
+        }
+
+        // CONFIRM PASSWORD
+        private void txtConfirm_Enter(object sender, EventArgs e)
+        {
+            if (txtConfirm.Text == "Confirm Password")
+            {
+                txtConfirm.Text = "";
+                txtConfirm.ForeColor = Color.Black;
+                txtConfirm.PasswordChar = '*';
+            }
+        }
+
+        private void txtConfirm_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtConfirm.Text))
+            {
+                txtConfirm.Text = "Confirm Password";
+                txtConfirm.ForeColor = Color.Gray;
+                txtConfirm.PasswordChar = '\0';
+            }
+        }
         private void btnRegister_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();

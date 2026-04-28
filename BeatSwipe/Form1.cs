@@ -57,8 +57,8 @@ namespace BeatSwipe
 
             using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
                 mainPanel.ClientRectangle,
-                Color.FromArgb(8, 10, 20),
-                Color.FromArgb(65, 0, 85),
+                Color.FromArgb(5, 5, 5),
+                Color.FromArgb(60, 10, 10),
                 45f))
             {
                 g.FillRectangle(brush, mainPanel.ClientRectangle);
@@ -68,7 +68,7 @@ namespace BeatSwipe
         private void btnGetStarted_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Otvara se forma za registraciju / unos muzičkog profila.");
-            LoginForm login = new LoginForm();
+            RegisterForm login = new RegisterForm();
             login.Show();
             this.Hide();
         }

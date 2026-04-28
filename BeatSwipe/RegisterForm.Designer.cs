@@ -90,23 +90,8 @@ namespace BeatSwipe
             txtUsername.Location = new System.Drawing.Point(120, 100);
             txtUsername.Size = new System.Drawing.Size(260, 30);
 
-            txtUsername.Enter += (s, e) =>
-            {
-                if (txtUsername.Text == "Username")
-                {
-                    txtUsername.Text = "";
-                    txtUsername.ForeColor = Color.Black;
-                }
-            };
-
-            txtUsername.Leave += (s, e) =>
-            {
-                if (string.IsNullOrWhiteSpace(txtUsername.Text))
-                {
-                    txtUsername.Text = "Username";
-                    txtUsername.ForeColor = Color.Gray;
-                }
-            };
+            txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
+            txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
 
             // PASSWORD
             txtPassword.Text = "Password";
@@ -115,25 +100,8 @@ namespace BeatSwipe
             txtPassword.Location = new System.Drawing.Point(120, 160);
             txtPassword.Size = new System.Drawing.Size(260, 30);
 
-            txtPassword.Enter += (s, e) =>
-            {
-                if (txtPassword.Text == "Password")
-                {
-                    txtPassword.Text = "";
-                    txtPassword.ForeColor = Color.Black;
-                    txtPassword.PasswordChar = '*';
-                }
-            };
-
-            txtPassword.Leave += (s, e) =>
-            {
-                if (string.IsNullOrWhiteSpace(txtPassword.Text))
-                {
-                    txtPassword.Text = "Password";
-                    txtPassword.ForeColor = Color.Gray;
-                    txtPassword.PasswordChar = '\0';
-                }
-            };
+            txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
 
             // CONFIRM
             txtConfirm.Text = "Confirm Password";
@@ -142,25 +110,8 @@ namespace BeatSwipe
             txtConfirm.Location = new System.Drawing.Point(120, 220);
             txtConfirm.Size = new System.Drawing.Size(260, 30);
 
-            txtConfirm.Enter += (s, e) =>
-            {
-                if (txtConfirm.Text == "Confirm Password")
-                {
-                    txtConfirm.Text = "";
-                    txtConfirm.ForeColor = Color.Black;
-                    txtConfirm.PasswordChar = '*';
-                }
-            };
-
-            txtConfirm.Leave += (s, e) =>
-            {
-                if (string.IsNullOrWhiteSpace(txtConfirm.Text))
-                {
-                    txtConfirm.Text = "Confirm Password";
-                    txtConfirm.ForeColor = Color.Gray;
-                    txtConfirm.PasswordChar = '\0';
-                }
-            };
+            txtConfirm.Enter += new System.EventHandler(this.txtConfirm_Enter);
+            txtConfirm.Leave += new System.EventHandler(this.txtConfirm_Leave);
 
             // REGISTER BUTTON
             btnRegister.Text = "REGISTER";
