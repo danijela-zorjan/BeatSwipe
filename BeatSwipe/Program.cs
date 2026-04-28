@@ -8,15 +8,16 @@ namespace BeatSwipe
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        public static int LoggedUserId = 0;
+        public static string LoggedUsername = "";
+        public static string LoggedRole = "";
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
         }
     }
 }
